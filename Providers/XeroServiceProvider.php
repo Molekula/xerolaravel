@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 class XeroServiceProvider extends ServiceProvider
 {
-    private $config = "xero/config.php";
+    private $config = "xero.php";
 
     public function boot()
     {
