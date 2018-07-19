@@ -2,18 +2,18 @@
 
 return [
 
-    'oauth' => [
+    "oauth" => [
 
         /*
         |--------------------------------------------------------------------------
         | OAuth Callback
         |--------------------------------------------------------------------------
         |
-        | Provide a callback URL, or use 'oob' if one isn't required.
+        | Provide a callback URL, or use "oob" if one isn"t required.
         |
         */
 
-        'callback'          => 'oob',
+        "callback" => "oob",
 
         /*
         |--------------------------------------------------------------------------
@@ -27,8 +27,8 @@ return [
         |
         */
 
-        'consumer_key'      => 'YOURCONSUMERKEY',
-        'consumer_secret'   => 'YOURSECRETKEY',
+        "consumer_key" => "YOURCONSUMERKEY",
+        "consumer_secret" => "YOURSECRETKEY",
 
         /*
         |--------------------------------------------------------------------------
@@ -45,13 +45,13 @@ return [
         | The path must follow the format file:// and then the absolute path of the
         | keys on the server.
         |
-        | Note: do not omit the first '/'  if using a UNIX based filesystem when
-        | setting the absolute path (so the path should begin with 'file:///'.
+        | Note: do not omit the first "/"  if using a UNIX based filesystem when
+        | setting the absolute path (so the path should begin with "file:///".
         |
         */
 
-        'rsa_private_key'  => 'file:///home/absolutepath/vendor/src/drawmyattention/xerolaravel/Certificates/privatekey.pem',
-        'rsa_public_key'   => 'file:///home/absolutepath/vendor/src/drawmyattention/xerolaravel/Certificates/publickey.cer'
+        "rsa_private_key" => "file://" . __DIR__ . "/vendor/src/drawmyattention/xerolaravel/Certificates/privatekey.pem",
+        "rsa_public_key" => "file://" . __DIR__ . "/vendor/src/drawmyattention/xerolaravel/Certificates/publickey.cer"
     ]
 
 ];

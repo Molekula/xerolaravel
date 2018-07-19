@@ -5,5 +5,8 @@ use Illuminate\Support\Facades\Facade;
 
 class XeroPayment extends Facade
 {
-    protected static function getFacadeAccessor() { return 'XeroPayment'; }
+    protected static function getFacadeAccessor()
+    {
+        return "XeroPayment";
+    }
 }

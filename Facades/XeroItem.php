@@ -3,10 +3,10 @@ namespace DrawMyAttention\XeroLaravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class XeroInvoice extends Facade
+class XeroItem extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return "XeroInvoice";
+        return "XeroItem";
     }
 }
