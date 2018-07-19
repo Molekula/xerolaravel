@@ -23,7 +23,17 @@
         "laravel": {
             "providers": [
                 "DrawMyAttention\\XeroLaravel\\Providers\\XeroServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "XeroAccount": "DrawMyAttention\\XeroLaravel\\Facades\\XeroAccount",
+                "XeroAttachment": "DrawMyAttention\\XeroLaravel\\Facades\\XeroAttachment",
+                "XeroInvoice": "DrawMyAttention\\XeroLaravel\\Facades\\XeroInvoice",
+                "XeroItem": "DrawMyAttention\\XeroLaravel\\Facades\\XeroItem",
+                "XeroPartner": "DrawMyAttention\\XeroLaravel\\Facades\\XeroPartner",
+                "XeroPayment": "DrawMyAttention\\XeroLaravel\\Facades\\XeroPayment",
+                "XeroPrivate": "DrawMyAttention\\XeroLaravel\\Facades\\XeroPrivate",
+                "XeroPublic": "DrawMyAttention\\XeroLaravel\\Facades\\XeroPublic"
+            }
         }
     }
 }
