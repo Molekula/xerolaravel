@@ -6,12 +6,12 @@ use Illuminate\Support\ServiceProvider;
 
 class XeroServiceProvider extends ServiceProvider
 {
-    private $config = 'xero/config.php';
+    private $config = "xero/config.php";
 
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config.php' => config_path($this->config),
+            __DIR__ . "/../config.php" => config_path($this->config),
         ]);
     }
 
@@ -24,53 +24,54 @@ class XeroServiceProvider extends ServiceProvider
     {
         // Merge defaults
         $this->mergeConfigFrom(
-            __DIR__.'/../config.php', 'xero.config'
+            __DIR__ . "/../config.php",
+            "xero.config"
         );
 
         // Grab config
-        $config = $this->app->config->get('xero.config');
+        $config = $this->app->config->get("xero.config");
 
-        $this->app->bind('XeroPrivate', function () use ($config) {
+        $this->app->bind("XeroPrivate", function () use ($config) {
             return new \XeroPHP\Application\PrivateApplication($config);
         });
 
-        $this->app->bind('XeroPublic', function () use ($config) {
+        $this->app->bind("XeroPublic", function () use ($config) {
             return new \XeroPHP\Application\PublicApplication($config);
         });
 
-        $this->app->bind('XeroPartner', function () use ($config) {
+        $this->app->bind("XeroPartner", function () use ($config) {
             return new \XeroPHP\Application\PartnerApplication($config);
         });
 
-        $this->app->bind('XeroInvoice', function(){
+        $this->app->bind("XeroInvoice", function(){
            return new \XeroPHP\Models\Accounting\Invoice();
         });
 
-        $this->app->bind('XeroPayment', function(){
+        $this->app->bind("XeroPayment", function(){
            return new \XeroPHP\Models\Accounting\Payment();
         });
 
-        $this->app->bind('XeroInvoiceLine', function(){
+        $this->app->bind("XeroInvoiceLine", function(){
             return new \XeroPHP\Models\Accounting\Invoice\LineItem();
         });
 
-        $this->app->bind('XeroContact', function(){
+        $this->app->bind("XeroContact", function(){
             return new \XeroPHP\Models\Accounting\Contact();
         });
-        
-        $this->app->bind('XeroAddress', function(){
+
+        $this->app->bind("XeroAddress", function(){
             return new \XeroPHP\Models\Accounting\Address();
         });
 
-        $this->app->bind('XeroAccount', function(){
+        $this->app->bind("XeroAccount", function(){
             return new \XeroPHP\Models\Accounting\Account();
         });
 
-        $this->app->bind('XeroBrandingTheme', function(){
+        $this->app->bind("XeroBrandingTheme", function(){
             return new \XeroPHP\Models\Accounting\BrandingTheme();
         });
 
-        $this->app->bind('XeroAttachment', function(){
+        $this->app->bind("XeroAttachment", function(){
             return new \XeroPHP\Models\Accounting\Attachment();
         });
     }
