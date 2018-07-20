@@ -23,13 +23,10 @@ class XeroServiceProvider extends ServiceProvider
     public function register()
     {
         // Merge defaults
-        $this->mergeConfigFrom(
-            __DIR__ . "/../config.php",
-            "xero.config"
-        );
+        $this->mergeConfigFrom(__DIR__ . "/../config.php", "xero");
 
         // Grab config
-        $config = $this->app->config->get("xero.config");
+        $config = $this->app->config->get("xero");
 
         $this->app->bind("XeroPrivate", function () use ($config) {
             return new \XeroPHP\Application\PrivateApplication($config);
